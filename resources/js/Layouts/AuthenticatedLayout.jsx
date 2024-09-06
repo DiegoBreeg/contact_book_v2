@@ -5,7 +5,8 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
 
-export default function Authenticated({ user, header, children }) {
+export default function AuthenticatedLayout({ user, header, children })
+{
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
@@ -21,9 +22,27 @@ export default function Authenticated({ user, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink
+                                    href={route('dashboard')}
+                                    active={route().current('dashboard')}
+                                    >
+
                                     Dashboard
-                                </NavLink>                                
+                                </NavLink>
+                                <NavLink
+                                    href={route('contact.index')}
+                                    active={route().current('contact.index')}
+                                    >
+
+                                    Contacts
+                                </NavLink>
+                                <NavLink
+                                    href={route('contactBook.index')}
+                                    active={route().current('contactBook.index')}
+                                    >
+
+                                    Contact Books
+                                </NavLink>
                             </div>
                         </div>
 
